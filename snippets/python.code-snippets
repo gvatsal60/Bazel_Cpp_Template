@@ -1,0 +1,97 @@
+/**
+ * @file python.code-snippets
+ * @brief Contains custom code snippets for Python
+ *
+ * This file provides a collection of code snippets designed to facilitate rapid
+ * development by offering quick access to commonly used patterns and boilerplate
+ * code. The snippets include function templates, common data structures, and
+ * useful macros.
+ *
+ * To utilize these snippets, integrate this file into your IDE's snippet manager
+ * or configuration. Feel free to modify and expand the snippets to meet your
+ * specific coding requirements.
+ */
+
+{
+  /***************************************************************************************
+   * File Template
+   **************************************************************************************/
+  "Python File Template": {
+    "scope": "python",
+    "prefix": "template",
+    "body": [
+      "# ***************************************************************************************",
+      "# File: ${TM_FILENAME}",
+      "# Author: ${USER}",
+      "# Date: ${CURRENT_DATE}-${CURRENT_MONTH_NAME_SHORT}-${CURRENT_YEAR}",
+      "# Description: Brief description of the file's purpose.",
+      "# **************************************************************************************/",
+      "",
+      "# ***************************************************************************************",
+      "# License",
+      "# **************************************************************************************/",
+      "\"\"\"",
+      "# This file is licensed under the MIT License.",
+      "# License information should be updated as necessary.",
+      "\"\"\"",
+      "",
+      "# ***************************************************************************************",
+      "# Imports",
+      "# **************************************************************************************/",
+      "",
+      "# ***************************************************************************************",
+      "# Constants",
+      "# **************************************************************************************/",
+      "",
+      "# ***************************************************************************************",
+      "# Function Declarations",
+      "# **************************************************************************************/",
+      "",
+      "# ***************************************************************************************",
+      "# Main Code",
+      "# **************************************************************************************/",
+      ""
+    ],
+    "description": "Python file template",
+    "isFileTemplate": true
+  },
+
+  /***************************************************************************************
+   * Debugging
+   **************************************************************************************/
+
+  "Log Hex Value": {
+    "scope": "python",
+    "prefix": "hlog",
+    // FIXME
+    "body": [
+      "print(f'{\"${TM_FILENAME}\"}:{0} $1: 0x{$1:02X}') ${LINE_COMMENT} REMOVE"
+    ],
+    "description": "Log hex value to console"
+  },
+  "Log String Value": {
+    "scope": "python",
+    "prefix": "slog",
+    // FIXME
+    "body": [
+      "print(f'{\"${TM_FILENAME}\"}:{0} $1: {$1}') ${LINE_COMMENT} REMOVE"
+    ],
+    "description": "Log string value to console"
+  },
+  "Log Function Name": {
+    "scope": "python",
+    "prefix": "log0",
+    // FIXME
+    "body": ["print(f'{\"${TM_FILENAME}\"}:{0} ') ${LINE_COMMENT} REMOVE"],
+    "description": "Log function name with line number to console"
+  },
+  "Log Variable Value": {
+    "scope": "python",
+    "prefix": "log1",
+    // FIXME
+    "body": [
+      "print(f'{\"${TM_FILENAME}\"}:{0} $1 : {$1}') ${LINE_COMMENT} REMOVE"
+    ],
+    "description": "Log variable value to console"
+  }
+}

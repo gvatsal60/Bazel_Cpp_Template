@@ -1,0 +1,98 @@
+{
+  "capAdd": [
+    "SYS_PTRACE"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "DavidAnson.vscode-markdownlint",
+        "Gruntfuggly.todo-tree",
+        "PKief.material-icon-theme",
+        "SonarSource.sonarlint-vscode",
+        "Tyriar.sort-lines",
+        "bradzacher.vscode-copy-filename",
+        "esbenp.prettier-vscode",
+        "gurumukhi.selected-lines-count",
+        "ms-azuretools.vscode-docker",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens"
+      ],
+      "settings": {
+        "[cpp]": {
+          "C_Cpp.autocompleteAddParentheses": true,
+          "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+          "C_Cpp.intelliSenseEngine": "default",
+          "editor.defaultFormatter": "ms-vscode.cpptools"
+        },
+        "[dockercompose]": {
+          "editor.autoIndent": "advanced",
+          "editor.defaultFormatter": "ms-azuretools.vscode-docker",
+          "editor.insertSpaces": true,
+          "editor.quickSuggestions": {
+            "comments": false,
+            "other": true,
+            "strings": true
+          },
+          "editor.tabSize": 2,
+          "files.eol": "\n"
+        },
+        "[dockerfile]": {
+          "editor.defaultFormatter": "ms-azuretools.vscode-docker",
+          "editor.quickSuggestions": {
+            "strings": true
+          },
+          "files.eol": "\n"
+        },
+        "[shellscript]": {
+          "editor.defaultFormatter": "foxundermoon.shell-format",
+          "editor.tabSize": 4,
+          "files.eol": "\n"
+        },
+        "editor.bracketPairColorization.enabled": true,
+        "editor.comments.insertSpace": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.snippetSuggestions": "top",
+        "editor.tabCompletion": "on",
+        "editor.tabSize": 2,
+        "editor.trimAutoWhitespace": true,
+        "explorer.confirmDelete": false,
+        "extensions.autoUpdate": true,
+        "extensions.ignoreRecommendations": true,
+        "files.associations": {
+          "*.code-snippets": "jsonc"
+        },
+        "files.autoSave": "afterDelay",
+        "files.eol": "auto",
+        "files.exclude": {
+          "**/.vscode": true
+        },
+        "remote.downloadExtensionsLocally": false,
+        "search.exclude": {
+          "**/*.code-search": true,
+          "**/*.git": true,
+          "**/*.vscode-server": true,
+          "**/bower_components": true,
+          "**/node_modules": true
+        },
+        "telemetry.telemetryLevel": "off",
+        "windows.title": "${folderPath}",
+        "workbench.iconTheme": "material-icon-theme",
+        "workbench.startupEditor": "none"
+      }
+    }
+  },
+  "features": {
+    "ghcr.io/gvatsal60/dev-container-features/sonarlint": {}
+  },
+  "image": "mcr.microsoft.com/devcontainers/base:noble",
+  "mounts": [
+    "source=${containerWorkspaceFolder}/snippets,target=${containerWorkspaceFolder}/.vscode,type=bind,consistency=cached,readonly"
+  ],
+  "postCreateCommand": "chmod +x ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh && ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh",
+  "runArgs": [
+    "--rm",
+    "--name=vsc-${localEnv:USER}-${containerWorkspaceFolderBasename}-${devcontainerId}"
+  ]
+}

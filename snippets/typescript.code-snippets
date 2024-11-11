@@ -1,0 +1,66 @@
+/**
+ * @file typescript.code-snippets
+ * @brief Contains custom code snippets for Typescript
+ *
+ * This file provides a collection of code snippets designed to facilitate rapid
+ * development by offering quick access to commonly used patterns and boilerplate
+ * code. The snippets include function templates, common data structures, and
+ * useful macros.
+ *
+ * To utilize these snippets, integrate this file into your IDE's snippet manager
+ * or configuration. Feel free to modify and expand the snippets to meet your
+ * specific coding requirements.
+ */
+
+{
+  /***************************************************************************************
+   * File Template
+   **************************************************************************************/
+  "Typescript File Template": {
+    "scope": "typescript",
+    "prefix": "template",
+    "body": [
+      "/***************************************************************************************",
+      " * File: ${TM_FILENAME}",
+      " * Author: ${USER}",
+      " * Date: ${CURRENT_DATE}-${CURRENT_MONTH_NAME_SHORT}-${CURRENT_YEAR}",
+      " * Description: Brief description of the file's purpose.",
+      " **************************************************************************************/",
+      "",
+      "/***************************************************************************************",
+      " * License",
+      " **************************************************************************************/",
+      "/*",
+      " * This file is licensed under the MIT License.",
+      " * License information should be updated as necessary.",
+      " */",
+      "",
+      "/***************************************************************************************",
+      " * Imports",
+      " **************************************************************************************/",
+      "",
+      "/***************************************************************************************",
+      " * Constants",
+      " **************************************************************************************/",
+      "",
+      "/***************************************************************************************",
+      " * Interfaces",
+      " **************************************************************************************/",
+      "",
+      "/***************************************************************************************",
+      " * Classes",
+      " **************************************************************************************/",
+      "",
+      "/***************************************************************************************",
+      " * Functions",
+      " **************************************************************************************/",
+      ""
+    ],
+    "description": "typescript file template",
+    "isFileTemplate": true
+  }
+  /***************************************************************************************
+   * Debugging
+   **************************************************************************************/
+  // TODO
+}

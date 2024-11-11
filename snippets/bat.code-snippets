@@ -1,0 +1,60 @@
+/**
+ * @file bat.code-snippets
+ * @brief Contains custom code snippets for Windows Bat
+ *
+ * This file provides a collection of code snippets designed to facilitate rapid
+ * development by offering quick access to commonly used patterns and boilerplate
+ * code. The snippets include function templates, common data structures, and
+ * useful macros.
+ *
+ * To utilize these snippets, integrate this file into your IDE's snippet manager
+ * or configuration. Feel free to modify and expand the snippets to meet your
+ * specific coding requirements.
+ */
+
+{
+  /***************************************************************************************
+   * File Template
+   **************************************************************************************/
+  "Windows Bat File Template": {
+    "scope": "bat",
+    "prefix": "template",
+    "body": [
+      "@echo off",
+      "rem ##########################################################################################",
+      "rem File: ${TM_FILENAME}",
+      "rem Author: ${USER}",
+      "rem Date: ${CURRENT_DATE}-${CURRENT_MONTH_NAME_SHORT}-${CURRENT_YEAR}",
+      "rem Description: Brief description of the script purpose.",
+      "rem ##########################################################################################",
+      "",
+      "rem ##########################################################################################",
+      "rem License",
+      "rem ##########################################################################################",
+      "rem This script is licensed under the MIT License.",
+      "rem License information should be updated as necessary.",
+      "rem ##########################################################################################",
+      "",
+      "rem ##########################################################################################",
+      "rem Constants",
+      "rem ##########################################################################################",
+      "",
+      "rem ##########################################################################################",
+      "rem Functions",
+      "rem ##########################################################################################",
+      "",
+      "rem ##########################################################################################",
+      "rem Main Script",
+      "rem ##########################################################################################",
+      "",
+      "rem Main script logic goes here",
+      ""
+    ],
+    "description": "Windows bat file template",
+    "isFileTemplate": true
+  }
+  /***************************************************************************************
+   * Debugging
+   **************************************************************************************/
+  // TODO
+}

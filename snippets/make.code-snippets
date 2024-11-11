@@ -1,0 +1,67 @@
+/**
+ * @file make.code-snippets
+ * @brief Contains custom code snippets for Makefile
+ *
+ * This file provides a collection of code snippets designed to facilitate rapid
+ * development by offering quick access to commonly used patterns and boilerplate
+ * code. The snippets include function templates, common data structures, and
+ * useful macros.
+ *
+ * To utilize these snippets, integrate this file into your IDE's snippet manager
+ * or configuration. Feel free to modify and expand the snippets to meet your
+ * specific coding requirements.
+ */
+
+{
+  /***************************************************************************************
+   * File Template
+   **************************************************************************************/
+  "Makefile File Template": {
+    "scope": "makefile",
+    "prefix": "template",
+    "body": [
+      "#***************************************************************************************",
+      "# * File: ${TM_FILENAME}",
+      "# * Author: ${USER}",
+      "# * Date: ${CURRENT_DATE}-${CURRENT_MONTH_NAME_SHORT}-${CURRENT_YEAR}",
+      "# * Description: Brief description of the Makefile's purpose.",
+      "# **************************************************************************************/",
+      "",
+      "#***************************************************************************************",
+      "# * License",
+      "# **************************************************************************************/",
+      "# This file is licensed under the MIT License.",
+      "# License information should be updated as necessary.",
+      "",
+      "#***************************************************************************************",
+      "# * Variables",
+      "# **************************************************************************************/",
+      "",
+      "#***************************************************************************************",
+      "# * Targets",
+      "# **************************************************************************************/",
+      "",
+      "# Phony targets",
+      ".PHONY: all clean test",
+      "",
+      "# Default target",
+      "all: target1 target2",
+      "",
+      "# Clean up build artifacts",
+      "clean:",
+      "\t@echo 'Cleaning up...'",
+      "\trm -rf",
+      "",
+      "# Run tests",
+      "test:",
+      "\t@echo 'Running tests...'",
+      ""
+    ],
+    "description": "makefile file template",
+    "isFileTemplate": true
+  }
+  /***************************************************************************************
+   * Debugging
+   **************************************************************************************/
+  // TODO
+}
