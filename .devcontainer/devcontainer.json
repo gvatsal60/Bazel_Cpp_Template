@@ -59,6 +59,10 @@
         "[starlark]": {
           "editor.defaultFormatter": "BazelBuild.vscode-bazel"
         },
+        "clangd.arguments": [
+          "-background-index",
+          "-compile-commands-dir=${localWorkspaceFolder}"
+        ],
         "editor.bracketPairColorization.enabled": true,
         "editor.comments.insertSpace": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -79,11 +83,6 @@
         "files.exclude": {
           "**/.vscode": true
         },
-        "clangd.arguments": [
-          "-background-index",
-          "-compile-commands-dir=${localWorkspaceFolder}"
-        ],
-        "sonarlint.pathToCompileCommands": "${localWorkspaceFolder}/compile_commands.json",
         "remote.downloadExtensionsLocally": false,
         "search.exclude": {
           "**/*.code-search": true,
@@ -92,6 +91,7 @@
           "**/bower_components": true,
           "**/node_modules": true
         },
+        "sonarlint.pathToCompileCommands": "${localWorkspaceFolder}/compile_commands.json",
         "telemetry.telemetryLevel": "off",
         "windows.title": "${folderPath}",
         "workbench.iconTheme": "material-icon-theme",
