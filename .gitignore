@@ -109,7 +109,15 @@ coverage/
 # Binaries, node_modules, and other folders #
 ############################################
 bin/
-lib/
 dist/
 bower_components/
 *.min.js
+
+# Bazel
+bazel-bin
+bazel-genfiles
+bazel-googletest
+bazel-out
+bazel-testlogs
+MODULE.bazel.lock
+bazel-Bazel_Cpp_Template
