@@ -1,25 +1,22 @@
 include cfg/.env
+include Makefiles/rules.mk
 
 # Targets
 .PHONY: all test clean
 
-all:
-	@bazel build //$(TOP_DIR):all
+all: clean build
 
 build:
-	@bazel build //$(TOP_DIR):all
+	@$(BUILD_TOOL) $(BUILD_CMD)
 
 test:
-	@bazel test //$(TOP_DIR):test
+	@$(BUILD_TOOL) $(TEST_CMD)
 
 run:
-	@bazel run //$(TOP_DIR):main
+	@$(BUILD_TOOL) $(RUN_CMD)
 
-clean_json:
-	@rm -rf compile_commands.json
-
-clean: clean_json
-	@bazel clean --async
+clean:
+	@$(BUILD_TOOL) $(CLEAN_CMD)
 
 sonar: clean build
-	@bazel run @hedron_compile_commands//:refresh_all -- --compilation_mode=dbg
+	@$(BUILD_TOOL) $(SONAR_CMD)

@@ -28,7 +28,7 @@ DOCKER_IMG_NAME := $(DOCKER_BASE_IMG_NAME):$(DOCKER_IMG_TAG)
 DOCKER_DEPS_IMAGE_BUILD_FLAGS ?= --no-cache=true
 
 # Volume mount configuration for Docker container.
-DOCKER_VOL ?= --volume $(shell pwd)/$(PROJECT_NAME):/$(PROJECT_NAME)
+DOCKER_VOL ?= --volume $(shell pwd):/$(PROJECT_NAME)
 
 # Directory to work within the Docker container.
 DOCKER_WORK_DIR ?= -w /$(PROJECT_NAME)
