@@ -1,28 +1,25 @@
+include cfg/.env
+
 # Targets
-.PHONY: all
+.PHONY: all test clean
+
 all:
-	@bazel build //project:all
+	@bazel build //$(TOP_DIR):all
 
-.PHONY: build
 build:
-	@bazel build //project:all
+	@bazel build //$(TOP_DIR):all
 
-.PHONY: test
 test:
-	@bazel test //project:test
+	@bazel test //$(TOP_DIR):test
 
-.PHONY: run
 run:
-	@bazel run //project:main
+	@bazel run //$(TOP_DIR):main
 
-.PHONY: clean_json
 clean_json:
 	@rm -rf compile_commands.json
 
-.PHONY: clean
 clean: clean_json
 	@bazel clean --async
 
-.PHONY: sonar
-sonar: clean_json
+sonar: clean build
 	@bazel run @hedron_compile_commands//:refresh_all -- --compilation_mode=dbg

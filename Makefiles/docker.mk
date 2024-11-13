@@ -57,3 +57,5 @@ endif
 ifeq ($(strip $(DOCKER_GID)),)
     $(error DOCKER_GID is not set)
 endif
+
+.PHONY: all test clean

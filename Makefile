@@ -4,3 +4,5 @@ ifeq ($(shell test -f /.dockerenv && echo -n yes),yes)
 else
     include Makefiles/out.mk
 endif
+
+.PHONY: all test clean

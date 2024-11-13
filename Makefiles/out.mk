@@ -1,16 +1,16 @@
-include docker.mk
+include Makefiles/docker.mk
 
-BUILD_CMD := bazel build //project:all
-TEST_CMD := bazel test //project:test
-RUN_CMD := bazel run //project:prog
+BUILD_CMD := bazel build //$(TOP_DIR):all
+TEST_CMD := bazel test //$(TOP_DIR):test
+RUN_CMD := bazel run //$(TOP_DIR):prog
 CLEAN_CMD := bazel clean
-SONAR_CMD := 
+SONAR_CMD := bazel run @hedron_compile_commands//:refresh_all -- --compilation_mode=dbg
 
 # Define the path to the Dockerfile
-DOCKER_FILE_PATH := ../dockerfiles/Dockerfile
+DOCKER_FILE_PATH := dockerfiles/Dockerfile
 
 # Define the default target
-.PHONY: all
+.PHONY: all test clean
 
 # Targets
 all: build run
@@ -38,5 +38,5 @@ clean: build_img
 	@$(DOCKER_HOST) container run $(DOCKER_ARG) $(DOCKER_IMG_NAME) "$(CLEAN_CMD)"
 
 # Sonar
-sonar: build_img
+sonar: clean build
 	@$(DOCKER_HOST) container run $(DOCKER_ARG) $(DOCKER_IMG_NAME) "$(SONAR_CMD)"
