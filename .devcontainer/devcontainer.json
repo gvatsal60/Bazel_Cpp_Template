@@ -1,10 +1,15 @@
 {
+  "build": {
+    "context": ".",
+    "dockerfile": "Dockerfile"
+  },
   "capAdd": [
     "SYS_PTRACE"
   ],
   "customizations": {
     "vscode": {
       "extensions": [
+        "BazelBuild.vscode-bazel",
         "DavidAnson.vscode-markdownlint",
         "Gruntfuggly.todo-tree",
         "PKief.material-icon-theme",
@@ -12,8 +17,11 @@
         "Tyriar.sort-lines",
         "bradzacher.vscode-copy-filename",
         "esbenp.prettier-vscode",
+        "foxundermoon.shell-format",
         "gurumukhi.selected-lines-count",
+        "llvm-vs-code-extensions.vscode-clangd",
         "ms-azuretools.vscode-docker",
+        "ms-vscode.cpptools",
         "streetsidesoftware.code-spell-checker",
         "usernamehw.errorlens"
       ],
@@ -48,6 +56,13 @@
           "editor.tabSize": 4,
           "files.eol": "\n"
         },
+        "[starlark]": {
+          "editor.defaultFormatter": "BazelBuild.vscode-bazel"
+        },
+        "clangd.arguments": [
+          "-background-index",
+          "-compile-commands-dir=${localWorkspaceFolder}"
+        ],
         "editor.bracketPairColorization.enabled": true,
         "editor.comments.insertSpace": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -76,6 +91,7 @@
           "**/bower_components": true,
           "**/node_modules": true
         },
+        "sonarlint.pathToCompileCommands": "${localWorkspaceFolder}/compile_commands.json",
         "telemetry.telemetryLevel": "off",
         "windows.title": "${folderPath}",
         "workbench.iconTheme": "material-icon-theme",
@@ -86,9 +102,8 @@
   "features": {
     "ghcr.io/gvatsal60/dev-container-features/sonarlint": {}
   },
-  "image": "mcr.microsoft.com/devcontainers/base:noble",
   "mounts": [
-    "source=${containerWorkspaceFolder}/snippets,target=${containerWorkspaceFolder}/.vscode,type=bind,consistency=cached,readonly"
+    "source=${localWorkspaceFolder:-./}/snippets,target=${containerWorkspaceFolder}/.vscode,type=bind,consistency=cached,readonly"
   ],
   "postCreateCommand": "chmod +x ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh && ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh",
   "runArgs": [
