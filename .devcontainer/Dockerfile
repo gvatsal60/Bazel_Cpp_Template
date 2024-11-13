@@ -2,7 +2,7 @@
 # File: Dockerfile
 # Author: Vatsal Gupta (gvatsal60)
 # Date: 08-Nov-2024
-# Description: TBD
+# Description: Dockerfile for Bazel DevContainer
 # ##########################################################################
 
 # ##########################################################################
