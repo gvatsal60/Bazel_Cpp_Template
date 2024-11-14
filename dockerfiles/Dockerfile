@@ -33,7 +33,9 @@ RUN apt-get update \
   build-essential \
   ca-certificates \
   curl \
+  gdb \
   git \
+  valgrind \
   && apt-get -y clean \
   && rm -rf /var/lib/apt/lists/*
 
