@@ -85,9 +85,6 @@ logs/
 .bundler/
 .bundle/
 
-# Environment variables
-.env
-
 # Yarn
 .yarn/
 

@@ -5,8 +5,19 @@
 # For more details, please check https://github.com/bazelbuild/bazel/issues/18958
 ###############################################################################
 
+"""
+This module defines Bazel dependencies for the Hedron Compile Commands Extractor.
+It specifies the `hedron_compile_commands` dependency and includes a Git
+override to ensure a specific commit of the `hedron_compile_commands` repository
+is used in the build. This file serves as part of the configuration to manage
+external dependencies within a Bazel project.
+
 # Hedron's Compile Commands Extractor for Bazel
 # https://github.com/hedronvision/bazel-compile-commands-extractor
+
+For more details about Bazel's new external dependency management system, see:
+https://github.com/bazelbuild/bazel/issues/18958
+"""
 bazel_dep(name = "hedron_compile_commands", dev_dependency = True)
 git_override(
     module_name = "hedron_compile_commands",
