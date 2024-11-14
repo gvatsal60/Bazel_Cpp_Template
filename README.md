@@ -1,4 +1,4 @@
-# Bazel_Cpp_Template
+# Bazel C++ Template
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://img.shields.io/github/license/gvatsal60/Bazel_Cpp_Template)
 [![build status](https://github.com/gvatsal60/Bazel_Cpp_Template/actions/workflows/readme-checker.yaml/badge.svg)](https://github.com/gvatsal60/Bazel_Cpp_Template/actions/workflows/readme-checker.yaml)

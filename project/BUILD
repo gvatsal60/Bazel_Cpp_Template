@@ -10,10 +10,6 @@ cc_library(
 cc_binary(
     name = "main",
     srcs = glob(["src/*.cc"]),  # Automatically include all .cc files in src/
-    cxxopts = [
-        "-Iproject/inc",
-        "-Iproject/lib/inc",
-    ],
     includes = [
         "inc",  # Add inc directory to search paths for header files
         "lib/inc",  # Add lib/inc directory for hello-time headers
