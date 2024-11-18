@@ -6,10 +6,12 @@ DOCKER_HOST = docker
 # Specifies the context directory used for building the Docker image.
 DOCKER_BUILD_CONTEXT = .
 
-# UID (User ID) for the Docker container. Defaults to current user's UID.
-DOCKER_UID ?= $(shell id -u)
+# Use current user's UID if not set, using `whoami` to get the username for fallback.
+DOCKER_UID ?= $(shell id -u $(USER))
+DOCKER_GID ?= $(shell id -g $(USER))
 
-# GID (Group ID) for the Docker container. Defaults to current user's GID.
+# Alternatively, if you're still facing issues with $USER being unset:
+DOCKER_UID ?= $(shell id -u)
 DOCKER_GID ?= $(shell id -g)
 
 # Arguments to pass to the Docker command for setting user and mounting volumes.
