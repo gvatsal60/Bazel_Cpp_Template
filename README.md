@@ -4,6 +4,7 @@
 [![build status](https://github.com/gvatsal60/Bazel_Cpp_Template/actions/workflows/readme-checker.yaml/badge.svg)](https://github.com/gvatsal60/Bazel_Cpp_Template/actions/workflows/readme-checker.yaml)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/gvatsal60/Bazel_Cpp_Template/master.svg)](https://results.pre-commit.ci/latest/github/gvatsal60/Bazel_Cpp_Template/HEAD)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gvatsal60_Bazel_Cpp_Template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=gvatsal60_Bazel_Cpp_Template)
+[![Build Project](https://github.com/gvatsal60/Bazel_Cpp_Template/actions/workflows/build.yml/badge.svg)](https://github.com/gvatsal60/Bazel_Cpp_Template/actions/workflows/build.yml)
 ![GitHub pull-requests](https://img.shields.io/github/issues-pr/gvatsal60/Bazel_Cpp_Template)
 ![GitHub Issues](https://img.shields.io/github/issues/gvatsal60/Bazel_Cpp_Template)
 ![GitHub forks](https://img.shields.io/github/forks/gvatsal60/Bazel_Cpp_Template)
