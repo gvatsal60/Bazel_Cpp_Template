@@ -21,7 +21,7 @@ build_img:
 
 # Code Build
 build: build_img
-	$(DOCKER_RUN_CMD) $(BUILD_CMD)
+	@$(DOCKER_RUN_CMD) $(BUILD_CMD)
 
 # Test code
 test: build_img
