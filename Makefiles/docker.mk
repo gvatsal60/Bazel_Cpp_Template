@@ -6,16 +6,12 @@ DOCKER_HOST = docker
 # Specifies the context directory used for building the Docker image.
 DOCKER_BUILD_CONTEXT = .
 
-# UID (User ID) for the Docker container. Defaults to current user's UID.
-DOCKER_UID ?= $(shell id -u)
-
-# GID (Group ID) for the Docker container. Defaults to current user's GID.
-DOCKER_GID ?= $(shell id -g)
-
-DOCKER_USER_ENV ?= USER=$(shell whoami)
+# Fallback to default UID and GID if the current environment doesn't have it
+DOCKER_UID ?= $(shell id -u || echo 1001)  # default to 1001 if id -u fails
+DOCKER_GID ?= $(shell id -g || echo 1001)  # default to 1001 if id -g fails
 
 # Arguments to pass to the Docker command for setting user and mounting volumes.
-DOCKER_USER_ARG ?= --user $(DOCKER_UID):$(DOCKER_GID) --env $(DOCKER_USER_ENV)
+DOCKER_USER_ARG ?= --user $(DOCKER_UID):$(DOCKER_GID)
 
 # Name of the Docker image based on the repository root directory name.
 DOCKER_BASE_IMG_NAME := $(PROJECT_NAME)
