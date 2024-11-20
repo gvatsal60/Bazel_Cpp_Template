@@ -12,8 +12,10 @@ DOCKER_UID ?= $(shell id -u)
 # GID (Group ID) for the Docker container. Defaults to current user's GID.
 DOCKER_GID ?= $(shell id -g)
 
+DOCKER_USER_ENV ?= USER=$(shell whoami)
+
 # Arguments to pass to the Docker command for setting user and mounting volumes.
-DOCKER_USER_ARG ?= --user $(DOCKER_UID):$(DOCKER_GID)
+DOCKER_USER_ARG ?= --user $(DOCKER_UID):$(DOCKER_GID) --env $(DOCKER_USER_ENV)
 
 # Name of the Docker image based on the repository root directory name.
 DOCKER_BASE_IMG_NAME := $(PROJECT_NAME)

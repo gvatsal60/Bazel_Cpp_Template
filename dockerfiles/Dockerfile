@@ -36,6 +36,7 @@ RUN apt-get update \
   gdb \
   git \
   valgrind \
+  vim \
   && apt-get -y clean \
   && rm -rf /var/lib/apt/lists/*
 
