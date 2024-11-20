@@ -7,16 +7,16 @@ include Makefiles/rules.mk
 all: clean build
 
 build:
-	@$(BUILD_TOOL) $(BUILD_CMD)
+	@$(BUILD_CMD)
 
 test:
-	@$(BUILD_TOOL) $(TEST_CMD)
+	@$(TEST_CMD)
 
-run:
-	@$(BUILD_TOOL) $(RUN_CMD)
+run: build
+	@$(RUN_CMD)
 
 clean:
-	@$(BUILD_TOOL) $(CLEAN_CMD)
+	@$(CLEAN_CMD)
 
 sonar: clean build
-	@$(BUILD_TOOL) $(SONAR_CMD)
+	@$(SONAR_CMD)

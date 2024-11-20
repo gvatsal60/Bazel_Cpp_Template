@@ -1,7 +1,7 @@
 {
   "build": {
     "context": ".",
-    "dockerfile": "../dockerfiles/Dockerfile"
+    "dockerfile": "../dockerfiles/Dockerfile.debug"
   },
   "capAdd": [
     "SYS_PTRACE"
