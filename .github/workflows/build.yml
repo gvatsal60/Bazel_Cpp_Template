@@ -11,10 +11,6 @@ jobs:
       contents: write # Grant write permissions to modify repository contents
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Bazel cache directory
-        run: |
-          mkdir -p .bazel-cache
-          chmod -R 777 .bazel-cache
       - name: Build
         run: make build
       - name: Test
