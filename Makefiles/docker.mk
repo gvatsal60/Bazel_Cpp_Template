@@ -13,7 +13,7 @@ DOCKER_UID ?= $(shell id -u)
 DOCKER_GID ?= $(shell id -g)
 
 # Arguments to pass to the Docker command for setting user and mounting volumes.
-DOCKER_USER_ARG ?= --user $(DOCKER_UID):$(DOCKER_GID)
+DOCKER_USER_ARG ?= --privileged --user $(DOCKER_UID):$(DOCKER_GID)
 
 # Name of the Docker image based on the repository root directory name.
 DOCKER_BASE_IMG_NAME := $(PROJECT_NAME)
