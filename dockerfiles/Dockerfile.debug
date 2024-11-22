@@ -33,7 +33,6 @@ LABEL maintainer="Vatsal Gupta (gvatsal60)"
 ARG BAZELISK_BIN_PATH="/usr/local/bin/bazel"
 ARG BAZELISK_VER=v1.23.0
 ARG BAZELISK_LINK=https://github.com/bazelbuild/bazelisk/releases/download/${BAZELISK_VER}/bazelisk-linux-amd64
-
 ADD ${BAZELISK_LINK} ${BAZELISK_BIN_PATH}
 RUN chmod +x ${BAZELISK_BIN_PATH}
 
@@ -41,7 +40,6 @@ RUN chmod +x ${BAZELISK_BIN_PATH}
 ARG BUILDIFIER_BIN_PATH="/usr/local/bin/buildifier"
 ARG BUILDIFIER_VER=v7.3.1
 ARG BUILDIFIER_LINK=https://github.com/bazelbuild/buildtools/releases/download/${BUILDIFIER_VER}/buildifier-linux-amd64
-
 ADD ${BUILDIFIER_LINK} ${BUILDIFIER_BIN_PATH}
 RUN chmod +x ${BUILDIFIER_BIN_PATH}
 
