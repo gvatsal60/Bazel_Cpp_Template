@@ -72,7 +72,7 @@ Here’s the basic directory structure for this project:
 ├── Makefile                    # Makefile for the targets
 ├── WORKSPACE                   # Workspace definition (required by Bazel)
 ├── MODULE.bazel
-└──project
+└──bazel_cpp_template
     ├── BUILD                   # Root BUILD file
     ├── inc                     # Header file
     │   └── hello-greet.h

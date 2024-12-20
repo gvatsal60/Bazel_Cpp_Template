@@ -1,6 +1,5 @@
 {
   "build": {
-    "context": ".",
     "dockerfile": "../dockerfiles/Dockerfile.debug"
   },
   "capAdd": [
@@ -103,7 +102,7 @@
     "ghcr.io/gvatsal60/dev-container-features/sonarlint": {}
   },
   "mounts": [
-    "source=${localWorkspaceFolder:-./}/snippets,target=${containerWorkspaceFolder}/.vscode,type=bind,consistency=cached,readonly"
+    "source=${localWorkspaceFolder}/snippets,target=${containerWorkspaceFolder}/.vscode,type=bind,consistency=cached,readonly"
   ],
   "postCreateCommand": "chmod +x ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh && ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh",
   "runArgs": [

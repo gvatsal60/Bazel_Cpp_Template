@@ -13,12 +13,10 @@
 # ##########################################################################
 # Base Image
 # ##########################################################################
-FROM mcr.microsoft.com/vscode/devcontainers/cpp:noble AS base
+FROM mcr.microsoft.com/devcontainers/cpp:latest AS base
 
 # Description of the purpose of this image
 LABEL DESCRIPTION="Build Environment"
-
-ARG USERNAME=vscode
 
 # ##########################################################################
 # Maintainer
@@ -44,6 +42,7 @@ ADD ${BUILDIFIER_LINK} ${BUILDIFIER_BIN_PATH}
 RUN chmod +x ${BUILDIFIER_BIN_PATH}
 
 # Switch to non-root user
+ARG USERNAME=vscode
 USER ${USERNAME}
 
 # ##########################################################################
