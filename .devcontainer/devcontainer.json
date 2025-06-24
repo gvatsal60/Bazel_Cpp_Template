@@ -3,7 +3,9 @@
     "context": ".",
     "dockerfile": "../dockerfiles/Dockerfile"
   },
-  "capAdd": ["SYS_PTRACE"],
+  "capAdd": [
+    "SYS_PTRACE"
+  ],
   "customizations": {
     "vscode": {
       "extensions": [
