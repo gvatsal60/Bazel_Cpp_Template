@@ -3,9 +3,7 @@
     "context": ".",
     "dockerfile": "../dockerfiles/Dockerfile"
   },
-  "capAdd": [
-    "SYS_PTRACE"
-  ],
+  "capAdd": ["SYS_PTRACE"],
   "customizations": {
     "vscode": {
       "extensions": [
@@ -27,9 +25,6 @@
       ],
       "settings": {
         "[cpp]": {
-          "C_Cpp.autocompleteAddParentheses": true,
-          "C_Cpp.codeAnalysis.clangTidy.enabled": true,
-          "C_Cpp.intelliSenseEngine": "default",
           "editor.defaultFormatter": "ms-vscode.cpptools"
         },
         "[dockercompose]": {
@@ -73,7 +68,6 @@
         "editor.tabSize": 2,
         "editor.trimAutoWhitespace": true,
         "explorer.confirmDelete": false,
-        "extensions.autoUpdate": true,
         "extensions.ignoreRecommendations": true,
         "files.associations": {
           "*.code-snippets": "jsonc"
@@ -92,8 +86,6 @@
           "**/node_modules": true
         },
         "sonarlint.pathToCompileCommands": "${localWorkspaceFolder}/compile_commands.json",
-        "telemetry.telemetryLevel": "off",
-        "windows.title": "${folderPath}",
         "workbench.iconTheme": "material-icon-theme",
         "workbench.startupEditor": "none"
       }
@@ -103,7 +95,7 @@
     "ghcr.io/gvatsal60/dev-container-features/sonarlint": {}
   },
   "mounts": [
-    "source=${localWorkspaceFolder:-./}/snippets,target=${containerWorkspaceFolder}/.vscode,type=bind,consistency=cached,readonly"
+    "source=${localWorkspaceFolder}/snippets,target=${containerWorkspaceFolder}/.vscode,type=bind,consistency=cached, readonly"
   ],
   "postCreateCommand": "chmod +x ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh && ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh",
   "runArgs": [
