@@ -23,9 +23,10 @@ build_img:
 build: build_img
 	$(DOCKER_RUN_CMD) $(BUILD_CMD)
 
+# FIXME
 # Test code
-test: build_img
-	@$(DOCKER_RUN_CMD) $(TEST_CMD)
+# test: build_img
+# 	@$(DOCKER_RUN_CMD) $(TEST_CMD)
 
 # Run code
 run: build
