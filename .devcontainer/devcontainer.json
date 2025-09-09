@@ -1,7 +1,6 @@
 {
   "build": {
-    "context": "..",
-    "dockerfile": "dockerfiles/Dockerfile.debug"
+    "dockerfile": "../dockerfiles/Dockerfile.debug"
   },
   "capAdd": [
     "SYS_PTRACE"
@@ -26,14 +25,11 @@
       ],
       "settings": {
         "[cpp]": {
-          "C_Cpp.autocompleteAddParentheses": true,
-          "C_Cpp.codeAnalysis.clangTidy.enabled": true,
-          "C_Cpp.intelliSenseEngine": "default",
           "editor.defaultFormatter": "ms-vscode.cpptools"
         },
         "[dockercompose]": {
           "editor.autoIndent": "advanced",
-          "editor.defaultFormatter": "ms-azuretools.vscode-docker",
+          "editor.defaultFormatter": "ms-azuretools.vscode-containers",
           "editor.insertSpaces": true,
           "editor.quickSuggestions": {
             "comments": false,
@@ -44,7 +40,7 @@
           "files.eol": "\n"
         },
         "[dockerfile]": {
-          "editor.defaultFormatter": "ms-azuretools.vscode-docker",
+          "editor.defaultFormatter": "ms-azuretools.vscode-containers",
           "editor.quickSuggestions": {
             "strings": true
           },
