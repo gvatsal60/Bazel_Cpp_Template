@@ -8,9 +8,22 @@ jobs:
     runs-on: ubuntu-latest
     if: github.actor == 'dependabot[bot]'
     steps:
-      - name: Approve & Auto-Merge PR
+      - name: Approve PR
         run: |
           gh pr review --approve "${PR_URL}"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Wait for required status checks
+        run: |
+          gh pr checks "${PR_URL}" --watch
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Auto-Merge PR
+        run: |
           gh pr merge --auto --merge "${PR_URL}"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
