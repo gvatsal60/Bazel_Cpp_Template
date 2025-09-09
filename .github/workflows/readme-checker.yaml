@@ -1,5 +1,6 @@
 name: markdown-lint
 on:
+  push:
   pull_request:
 jobs:
   lint:
