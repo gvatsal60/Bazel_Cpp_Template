@@ -13,7 +13,10 @@
 # ##########################################################################
 # Base Image
 # ##########################################################################
-FROM gcr.io/bazel-public/bazel:latest AS base
+FROM mcr.microsoft.com/devcontainers/cpp:latest AS base
+
+# Description of the purpose of this image
+LABEL DESCRIPTION="Build Environment"
 
 # ##########################################################################
 # Maintainer
@@ -23,35 +26,24 @@ LABEL maintainer="Vatsal Gupta (gvatsal60)"
 # ##########################################################################
 # Install Dependencies
 # ##########################################################################
-USER root
 
-RUN apt-get update \
-  && apt-get -y install --no-install-recommends \
-  apt-transport-https \
-  apt-utils \
-  bash-completion \
-  build-essential \
-  ca-certificates \
-  curl \
-  gdb \
-  git \
-  valgrind \
-  vim \
-  && apt-get -y clean \
-  && rm -rf /var/lib/apt/lists/*
+# Add Bazelisk
+ARG BAZELISK_BIN_PATH="/usr/local/bin/bazel"
+ARG BAZELISK_VER=v1.23.0
+ARG BAZELISK_LINK=https://github.com/bazelbuild/bazelisk/releases/download/${BAZELISK_VER}/bazelisk-linux-amd64
+ADD ${BAZELISK_LINK} ${BAZELISK_BIN_PATH}
+RUN chmod +x ${BAZELISK_BIN_PATH}
 
 # Add buildifier
 ARG BUILDIFIER_BIN_PATH="/usr/local/bin/buildifier"
 ARG BUILDIFIER_VER=v7.3.1
 ARG BUILDIFIER_LINK=https://github.com/bazelbuild/buildtools/releases/download/${BUILDIFIER_VER}/buildifier-linux-amd64
-
 ADD ${BUILDIFIER_LINK} ${BUILDIFIER_BIN_PATH}
 RUN chmod +x ${BUILDIFIER_BIN_PATH}
 
-# ##########################################################################
-# USER
-# ##########################################################################
-USER ubuntu
+# Switch to non-root user
+ARG USERNAME=vscode
+USER ${USERNAME}
 
 # ##########################################################################
 # Copy Files
@@ -68,4 +60,3 @@ USER ubuntu
 # ##########################################################################
 # Command to Run
 # ##########################################################################
-CMD [ "version" ]
