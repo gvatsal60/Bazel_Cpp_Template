@@ -27,6 +27,8 @@ LABEL maintainer="Vatsal Gupta (gvatsal60)"
 # Install Dependencies
 # ##########################################################################
 
+ENV XDG_CACHE_HOME=/tmp/.cache
+
 # Add Bazelisk
 ARG BAZELISK_BIN_PATH="/usr/local/bin/bazel"
 ARG BAZELISK_VER=v1.23.0

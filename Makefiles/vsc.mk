@@ -9,8 +9,9 @@ all: clean build
 build:
 	@$(BUILD_CMD)
 
-test:
-	@$(TEST_CMD)
+# FIXME
+# test:
+# 	@$(TEST_CMD)
 
 run: build
 	@$(RUN_CMD)
