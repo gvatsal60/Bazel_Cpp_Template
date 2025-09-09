@@ -6,7 +6,7 @@ permissions:
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'pre-commit-ci[bot]' && github.event.pull_request.user.type == 'Bot' && github.actor == 'pre-commit-ci[bot]'
+    if: github.actor == 'pre-commit-ci[bot]' && github.event.pull_request.user.type == 'Bot'
     steps:
       - name: Approve a PR
         run: gh pr review --approve "$PR_URL"
