@@ -10,7 +10,7 @@ jobs:
     permissions:
       contents: write # Grant write permissions to modify repository contents
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Build
         run: make build
       - name: Test

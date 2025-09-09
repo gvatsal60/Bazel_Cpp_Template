@@ -1,7 +1,6 @@
 {
   "build": {
-    "context": ".",
-    "dockerfile": "../dockerfiles/Dockerfile"
+    "dockerfile": "../dockerfiles/Dockerfile.debug"
   },
   "capAdd": [
     "SYS_PTRACE"
@@ -18,7 +17,6 @@
         "bradzacher.vscode-copy-filename",
         "esbenp.prettier-vscode",
         "foxundermoon.shell-format",
-        "gurumukhi.selected-lines-count",
         "llvm-vs-code-extensions.vscode-clangd",
         "ms-azuretools.vscode-docker",
         "ms-vscode.cpptools",
@@ -27,14 +25,11 @@
       ],
       "settings": {
         "[cpp]": {
-          "C_Cpp.autocompleteAddParentheses": true,
-          "C_Cpp.codeAnalysis.clangTidy.enabled": true,
-          "C_Cpp.intelliSenseEngine": "default",
           "editor.defaultFormatter": "ms-vscode.cpptools"
         },
         "[dockercompose]": {
           "editor.autoIndent": "advanced",
-          "editor.defaultFormatter": "ms-azuretools.vscode-docker",
+          "editor.defaultFormatter": "ms-azuretools.vscode-containers",
           "editor.insertSpaces": true,
           "editor.quickSuggestions": {
             "comments": false,
@@ -45,11 +40,18 @@
           "files.eol": "\n"
         },
         "[dockerfile]": {
-          "editor.defaultFormatter": "ms-azuretools.vscode-docker",
+          "editor.defaultFormatter": "ms-azuretools.vscode-containers",
           "editor.quickSuggestions": {
             "strings": true
           },
           "files.eol": "\n"
+        },
+        "[json]": {
+          "editor.defaultFormatter": "vscode.json-language-features",
+          "editor.quickSuggestions": {
+            "strings": true
+          },
+          "editor.suggest.insertMode": "replace"
         },
         "[shellscript]": {
           "editor.defaultFormatter": "foxundermoon.shell-format",
@@ -73,7 +75,6 @@
         "editor.tabSize": 2,
         "editor.trimAutoWhitespace": true,
         "explorer.confirmDelete": false,
-        "extensions.autoUpdate": true,
         "extensions.ignoreRecommendations": true,
         "files.associations": {
           "*.code-snippets": "jsonc"
@@ -92,8 +93,6 @@
           "**/node_modules": true
         },
         "sonarlint.pathToCompileCommands": "${localWorkspaceFolder}/compile_commands.json",
-        "telemetry.telemetryLevel": "off",
-        "windows.title": "${folderPath}",
         "workbench.iconTheme": "material-icon-theme",
         "workbench.startupEditor": "none"
       }
@@ -103,7 +102,7 @@
     "ghcr.io/gvatsal60/dev-container-features/sonarlint": {}
   },
   "mounts": [
-    "source=${localWorkspaceFolder:-./}/snippets,target=${containerWorkspaceFolder}/.vscode,type=bind,consistency=cached,readonly"
+    "source=${localWorkspaceFolder}/snippets,target=${containerWorkspaceFolder}/.vscode,type=bind,consistency=cached,readonly"
   ],
   "postCreateCommand": "chmod +x ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh && ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh",
   "runArgs": [

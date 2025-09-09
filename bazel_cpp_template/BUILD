@@ -16,6 +16,6 @@ cc_binary(
     ],
     deps = [
         ":newlib",
-        "//project/lib:hello-time",  # Use the correct target name: //project/lib:hello-time
+        "//bazel_cpp_template/lib:hello-time",  # Use the correct target name: //bazel_cpp_template/lib:hello-time
     ],
 )
