@@ -1,6 +1,7 @@
 {
   "build": {
-    "dockerfile": "../dockerfiles/Dockerfile.debug"
+    "dockerfile": "dockerfiles/Dockerfile.debug",
+    "context": ".."
   },
   "capAdd": [
     "SYS_PTRACE"
@@ -17,7 +18,6 @@
         "bradzacher.vscode-copy-filename",
         "esbenp.prettier-vscode",
         "foxundermoon.shell-format",
-        "gurumukhi.selected-lines-count",
         "llvm-vs-code-extensions.vscode-clangd",
         "ms-azuretools.vscode-docker",
         "ms-vscode.cpptools",
@@ -58,6 +58,13 @@
         "[starlark]": {
           "editor.defaultFormatter": "BazelBuild.vscode-bazel"
         },
+        "[json]": {
+          "editor.quickSuggestions": {
+            "strings": true
+          },
+          "editor.suggest.insertMode": "replace",
+          "editor.defaultFormatter": "vscode.json-language-features"
+        },
         "clangd.arguments": [
           "-background-index",
           "-compile-commands-dir=${localWorkspaceFolder}"
@@ -72,7 +79,6 @@
         "editor.tabSize": 2,
         "editor.trimAutoWhitespace": true,
         "explorer.confirmDelete": false,
-        "extensions.autoUpdate": true,
         "extensions.ignoreRecommendations": true,
         "files.associations": {
           "*.code-snippets": "jsonc"
@@ -91,8 +97,6 @@
           "**/node_modules": true
         },
         "sonarlint.pathToCompileCommands": "${localWorkspaceFolder}/compile_commands.json",
-        "telemetry.telemetryLevel": "off",
-        "windows.title": "${folderPath}",
         "workbench.iconTheme": "material-icon-theme",
         "workbench.startupEditor": "none"
       }
