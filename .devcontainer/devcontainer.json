@@ -1,7 +1,7 @@
 {
   "build": {
-    "dockerfile": "dockerfiles/Dockerfile.debug",
-    "context": ".."
+    "context": "..",
+    "dockerfile": "dockerfiles/Dockerfile.debug"
   },
   "capAdd": [
     "SYS_PTRACE"
@@ -50,6 +50,13 @@
           },
           "files.eol": "\n"
         },
+        "[json]": {
+          "editor.defaultFormatter": "vscode.json-language-features",
+          "editor.quickSuggestions": {
+            "strings": true
+          },
+          "editor.suggest.insertMode": "replace"
+        },
         "[shellscript]": {
           "editor.defaultFormatter": "foxundermoon.shell-format",
           "editor.tabSize": 4,
@@ -57,13 +64,6 @@
         },
         "[starlark]": {
           "editor.defaultFormatter": "BazelBuild.vscode-bazel"
-        },
-        "[json]": {
-          "editor.quickSuggestions": {
-            "strings": true
-          },
-          "editor.suggest.insertMode": "replace",
-          "editor.defaultFormatter": "vscode.json-language-features"
         },
         "clangd.arguments": [
           "-background-index",
