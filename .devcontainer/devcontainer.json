@@ -25,7 +25,7 @@
       ],
       "settings": {
         "[cpp]": {
-          "editor.defaultFormatter": "ms-vscode.cpptools"
+          "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
         },
         "[dockercompose]": {
           "editor.autoIndent": "advanced",
