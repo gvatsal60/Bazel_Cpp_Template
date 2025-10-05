@@ -13,7 +13,7 @@
 # ##########################################################################
 # Base Image
 # ##########################################################################
-FROM mcr.microsoft.com/devcontainers/cpp:latest AS base
+FROM mcr.microsoft.com/devcontainers/cpp:debian AS base
 
 # Description of the purpose of this image
 LABEL DESCRIPTION="Build Environment"
