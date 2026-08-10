@@ -1,3 +1,4 @@
+#define _TIME_BITS 64
 #include "hello-time.h"
 #include <chrono>
 #include <iomanip>
