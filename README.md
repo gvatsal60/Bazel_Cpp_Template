@@ -103,11 +103,11 @@ For example, a simple test could look like:
 
 ```python
 cc_test(
-    name = "my_test",
-    srcs = glob(["tests/src/*.cc"]),
-    deps = [
+    name="my_test",
+    srcs=glob(["tests/src/*.cc"]),
+    deps=[
         "//src:my_binary",  # Example of linking to the binary
-        "@gtest//:gtest",   # Google Test dependency (external)
+        "@gtest//:gtest",  # Google Test dependency (external)
     ],
 )
 ```
@@ -126,9 +126,11 @@ Example of adding a dependency:
 
 ```python
 http_archive(
-    name = "gtest",
-    urls = ["https://github.com/google/googletest/archive/refs/tags/release-1.10.0.tar.gz"],
-    strip_prefix = "googletest-release-1.10.0",
+    name="gtest",
+    urls=[
+        "https://github.com/google/googletest/archive/refs/tags/release-1.10.0.tar.gz"
+    ],
+    strip_prefix="googletest-release-1.10.0",
 )
 ```
 
