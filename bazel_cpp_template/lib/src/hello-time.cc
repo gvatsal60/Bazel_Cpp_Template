@@ -1,3 +1,6 @@
+#if defined(__GLIBC__)
+#define _TIME_BITS 64
+#endif
 #include "hello-time.h"
 #include <chrono>
 #include <iomanip>
